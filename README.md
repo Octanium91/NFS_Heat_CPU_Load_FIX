@@ -3,7 +3,7 @@
 
  ## Instruction
 
- - copy **nfs_hits_cpu90_fix.cmd** in *Need for Speed Heat* main folder
+ - copy **nfs_hits_cpu90_fix.cmd** ([download page {link)](https://github.com/Octanium91/NFS_Heat_CPU_Load_FIX/releases)) in *Need for Speed Heat* main folder
  - run **nfs_hits_cpu90_fix.cmd** *(script create user.cfg fot your CPU)*
  - start game, be heppy :)
 
