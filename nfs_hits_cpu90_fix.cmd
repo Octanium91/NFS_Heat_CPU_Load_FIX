@@ -5,8 +5,8 @@ set "CPU_Threads=0"
 set "UserCFGFileCDDir=%~dp0"
 set "UserCFGFileName=user.cfg"
 set "UserCFGFile=%UserCFGFileCDDir%%UserCFGFileName%"
-for /f "tokens=2 delims= " %%a in ('"wmic CPU Get DeviceID,NumberOfCores,NumberOfLogicalProcessors"') do set "CPU_Cores=%%a"
-for /f "tokens=3 delims= " %%a in ('"wmic CPU Get DeviceID,NumberOfCores,NumberOfLogicalProcessors"') do set "CPU_Threads=%%a"
+for /f "tokens=*" %%a in ('powershell -Command "Get-CimInstance -ClassName Win32_Processor | Select-Object -ExpandProperty NumberOfCores"') do set "CPU_Cores=%%a"
+for /f "tokens=*" %%a in ('powershell -Command "Get-CimInstance -ClassName Win32_Processor | Select-Object -ExpandProperty NumberOfLogicalProcessors"') do set "CPU_Threads=%%a"
 if %CPU_Cores% == 0 goto oops_a
 echo.
 echo    Fix 90%% CPU load!
